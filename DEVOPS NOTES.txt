@@ -1,0 +1,445 @@
+																	DEVOPS NOTES
+
+WHAT IS DEVOPS?
+DevOps is a collaborative practice that integrates Development (writing code)  and Operations (managing infrastructure, deployment, and monitoring) into a single workflow. It enables a team to manage the entire application lifecycle — from planning and development to deployment and monitoring — resulting in faster and more reliable software delivery.
+DevOps is a culture, a set of practices, and a collection of tools designed to bridge the gap between development and operations teams.
+Its goal is to enable software to be built faster, tested continuously and released more reliably.
+By fostering collaboration, automation, and continuous feedback, DevOps empowers teams to deliver high-quality software efficiently and consistently.
+
+DEVOPS LIFECYCLE
+The DevOps lifecycle streamlines software development and operations by using automation and continuous processes across various stages:
+1. Plan						2. Develop(Code)						3. Build							4. Test
+5. Release					6. Deploy								7. Operate						8. Monitor
+Each stage leverages specific tools and technologies—many of which are open-source and tailored to business needs.
+
+GOALS OF DEVOPS
+1.	Faster Delivery of Software								:	Accelerate development cycles to release features and updates more quickly.
+2.	Automation of Processes									:	Automate repetitive tasks like building, testing, and deployment to reduce human error and save time.
+3.	Improved Collaboration									:	Foster better communication and cooperation between development and operations teams.
+4.	Continuous Integration & Continuous Deployment (CI/CD)		:	Integrate code changes frequently and deploy them seamlessly, ensuring fast and stable releases.
+5.	Higher Software Quality									:	Detect bugs early and often with automated testing and continuous feedback loops.
+6.	Rapid Recovery from Failures								:	Quickly identify, isolate, and resolve issues to maintain uptime and user satisfaction.
+
+KEY DEVOPS PRACTICES
+		Practices 			| 							Description 									| 				Tools
+CI/CD					| 	Automate code integration, testing, and deployment for faster, reliable releases. 		| 	Jenkins, GitHub Actions, GitLab CI, CircleCI
+Infrastructure as Code (IaC) 	| 	Define and manage infrastructure using code. 								| 	Terraform, Ansible, Pulumi, AWS CloudFormation
+Automated Testing 			| 	Run tests automatically to catch bugs early in the development cycle. 				| 	Selenium, JUnit, TestNG, Cypress
+Monitoring & Logging 		| 	Track app performance, get real-time alerts, and troubleshoot efficiently. 			| 	Prometheus, Grafana, ELK Stack, Datadog
+Containerization 			| 	Use containers to package and run apps consistently across environments. 			| 	Docker, Kubernetes, Podman, OpenShift
+Version Control 			| 	Track and manage source code collaboratively and maintain version history. 		| 	Git, GitHub, GitLab, Bitbucket
+Security (DevSecOps) 		| 	Integrate security practices into the DevOps pipeline from the beginning. 			| 	SonarQube, Snyk, Aqua, Checkmarx
+
+IT INFRASTRUCTURE
+IT Infrastructure refers to the foundational physical and virtual resources required to run, manage, and support IT services and software applications.
+In simple terms, it’s everything you need to host, run, connect, store, protect, and manage your software and data.
+
+COMPONENTS OF IT INFRASTRUCTURE
+When setting up an IT service or software company, these are the core building blocks:
+Component				 		| 							Description
+Machines (Servers & Computers) 		| 		Physical or virtual servers to run apps, and employee computers for development work.
+Network 							| 		Routers, switches, firewalls, and internet to ensure secure, efficient communication.
+Power 							| 		Continuous power supply via electricity, UPS, and generators for 24/7 operations.
+Storage 							| 		Hard drives and SSDs for storing code, databases, files, and backups.
+Backup 							| 		Regular data backup systems to protect against data loss, failure, or attacks.
+Security 							| 		Firewalls, antivirus, access controls, and encryption to secure systems and data.
+All these elements together form the IT Infrastructure — the foundation that allows software systems to operate smoothly, securely, and reliably
+
+7' Cs OF DEVOPS				
+7C of DevOps 				| 						Description 								| 					Most Widely Tools Used
+Continuous Development 	| Code is developed in small, continuous pieces rather than large chunks. 		| - Git 		- GitHub / GitLab 	- Bitbucket
+Continuous Integration 	 	| Code is integrated and tested frequently to ensure immediate validation. 		| - Jenkins		- GitLab CI/CD  	- Maven  		- SonarQube
+Continuous Testing 			| Automated testing is performed continuously to ensure code quality. 			| - JUnit 		- Selenium 		- Postman  	- PyTest
+Continuous Deployment		| Changes are automatically deployed to production or staging. 				| - Docker		- Kubernetes  		- AWS CodePipeline  
+Continuous Monitoring 		| Continuous monitoring of applications and infrastructure. 					| - Prometheus - Nagios  			- New Relic	- Grafana
+Continuous Feedback 		| Continuous feedback helps improve development and operational processes. 	| - Slack		- Trello  			- Jira  		- GitLab
+Continuous Operations 		| Operations are automated to ensure smooth functioning in production. 		| - Ansible		- Terraform  		- Chef  		- Puppet
+These phases ensure automation, rapid feedback, and continuous improvement throughout the software lifecycle.
+
+CONTINUOUS DEVELOPMENT
+Continuous Development is a DevOps practice where code is written and updated in small, continuous increments rather than in large chunks. Each change goes through immediate testing, building, and deployment, making the process more efficient and agile.
+Continuous Development ensures that code changes flow seamlessly through the pipeline, allowing rapid and reliable delivery of new features and fixes.
+Improves efficiency		: 	Every code change is quickly integrated, tested, and delivered.
+Easier debugging		: 	Smaller code updates make it easier to identify and fix bugs, vulnerabilities, or flaws.
+Cleaner codebase		: 	Promotes high-quality, well-structured code by avoiding large, unmanageable updates.
+Faster delivery			: 	Enables quicker releases, supporting the overall goal of continuous software delivery.
+Developer focus		: 	Frees up developers to concentrate more on innovation and code quality rather than firefighting issues.
+
+			Developer 1			Push/Commit code
+			Developer 2			--------------------->			Source Code Management Tools (GitHub/GitLab/Bitbucket)
+			Developer 3			<---------------------
+			Developer 4			   Pull/Clone Code
+
+CONTINUOUS INTEGRATION
+Continuous Integration (CI) is a DevOps practice where developers frequently merge their code changes into a central repository. The process involves several stages to ensure that the code is consistently built, tested, and reviewed.
+
+4 KEYS STAGES OF CI
+1. Getting the Source Code from SCM (Source Code Management):
+	Developers write code locally and push it to a remote repository like GitHub.
+	Jenkins monitors the repository for any new commits or changes and automatically triggers the next steps when code is pushed.
+2. Building the Code:
+	Jenkins uses Maven (or other build tools) to automate the process of building the code into the required packages (e.g., WAR, JAR, EAR).
+	Jenkins can trigger the build process every time new code is pushed, ensuring the code is always compiled and ready for testing.
+	Jenkins is the backbone of Continuous Integration, automating the entire process from code commit to build, testing, and artifact storage. This allows for faster, more reliable releases and 	ensures code quality is consistently maintained.
+3. Code Quality Review:
+	Jenkins integrates with SonarQube to automate the code quality review.
+	After the build process, Jenkins triggers SonarQube to analyze the code for any quality issues such as bugs, vulnerabilities, or code smells. The results are then displayed in Jenkins as a report.
+4. Storing the Build Artifacts:
+	Once the build is successful and the quality review is completed, Jenkins automates the process of storing the build artifacts (compiled files, packages) into repositories like Nexus.
+	These artifacts are then available for deployment or further testing.
+
+CONTINUOUS TESTING
+
+CONTINUOUS DEPLOYMENT
+
+CONTINUOUS MONITORING
+
+CONTINUOUS FEEDBACK
+CONTINUOUS OPERATIONS
+
+PREREQUISITES FOR LEARNING DEVOPS EFFECTIVELY
+	Categories			| 						What You Should Know
+Linux Basics 				| 			Basic commands (ls, cd, mkdir, chmod, top, etc.), file system structure
+Networking Concepts 		| 			IP, DNS, ports, HTTP/HTTPS, SSH, firewalls, basic troubleshooting (ping, netstat)
+Programming/Scripting 		| 			Bash scripting (essential), and basic knowledge of Python or any scripting language
+Version Control System 		| 			Git (clone, commit, push, pull, branches, merge, GitHub workflows)
+Software Development 		| 			Understanding of SDLC, CI/CD, testing, build processes
+Build Tools 				| 			Maven, Gradle, or npm depending on language stack
+Containers 				| 			Basic Docker usage (build, push, pull, run images), container lifecycle
+Cloud Basics 				| 			Introduction to AWS, Azure, or GCP; deploying VMs, using storage, etc.
+Monitoring/Logging 		| 			Basics of tools like Prometheus, Grafana, ELK stack, etc.
+
+But before going into the deep of Devops we should familiar with Linux Commands, Shell Scripting, AWS Services and more...
+So tight your seatbelt and let's go in the world of an other amazing open source operating system that is Linux.
+
+LINUX
+Linux is a free and open-source operating system based on Unix. It manages hardware and software resources and provides essential services for computer programs.
+
+WHY TO LEARN LINUX
+Linux is the backbone of modern IT infrastructure, giving a strong advantage to developers and DevOps engineers.
+Key Reasons:
+Most Servers Run on Linux 		– 	Over 90% of cloud servers and enterprise systems use Linux.
+DevOps Tools Run on Linux 		– 	Tools like Docker, Kubernetes, Ansible, Terraform, Jenkins perform best on Linux.
+Cloud Platforms Use Linux 		– 	AWS, Azure, and GCP deploy Linux VMs and services by default.
+Linux Offers Strong Security 		– 	Linux is less vulnerable and doesn’t generally require antivirus software.
+High Performance 				– 	Optimized for performance and stability in production environments.
+
+WHAT MAKES LINUX SPECIAL
+Community-Driven 				– 	Developed by a global community, not owned by any corporation.
+Free & Open Source 			– 	Anyone can use, modify, and distribute it.
+Secure by Design 				– 	Fewer security threats; used in banking, military, and cloud infrastructures.
+Command Line Focused (CLI) 	– 	Offers deep system control, automation, and scripting power.
+Preferred for Business Use 		– 	Essential for servers, cloud, and enterprise-level solutions.
+
+WHERE IS LINUX USED
+Web servers (Apache, Nginx)
+Cloud platforms (AWS, Azure, GCP)
+Android (based on Linux kernel)
+IoT devices
+Supercomputers
+DevOps & container tools (Docker, Kubernetes)
+
+HISTORY OF LINUX
+Linux was developed by Linus Torvalds, a Finnish software engineer, in 1991.
+At that time, Linus was frustrated with the limitations of UNIX-based systems, especially the licensing and cost.
+He discovered Minix, a minimal UNIX-like OS used for educational purposes, but found it lacking in flexibility and features.
+Linus used Minix as inspiration and began writing his own kernel — which eventually evolved into the Linux Operating System.
+The name Linux is derived from a combination of:
+(Li)nus + Mi(nix) = Linux
+He released Linux under the GNU General Public License (GPL), allowing anyone to freely use, modify, and distribute it — kickstarting one of the most successful open-source projects ever.
+
+LINUX ARCHITECTURE COMPONENTS
+Component 			| 						Description 											| Examples / Responsibilities
+App/Cmds 			| User-space programs that run on Linux. 											| Web browsers, text editors, CLI tools like ls, cd, cat
+Shell 				| Interface between users and the system. Interprets commands and interacts with the kernel. 	| Bash, Zsh, Fish
+Kernel 				| The core of the OS that manages all system resources. 								| Process management, memory management, device handling, system calls
+Hardware Components 	| Physical components the OS interacts with. 											| CPU, RAM, HDD/SSD, NICs, peripherals (keyboard, mouse, printer)
+
+Linux Kernel Interaction with Each Layer
+User Applications → Shell → Kernel
+	When a user types a command (like ls) in the shell:
+	The Shell interprets it.
+	The Shell then uses system calls to request services from the Kernel.
+	The Kernel allocates resources, executes processes, and returns output back to the shell, which shows it to the user.
+Kernel ↔ Hardware
+	The Kernel communicates directly with hardware through device drivers.
+	If a file is read from disk, the Kernel uses the disk driver to access storage.
+	If data is sent over the internet, the Kernel uses the network driver to interact with the network interface card (NIC).
+System Calls: The Gateway
+Applications don’t access hardware directly—they make system calls.
+	Example: A program calls open() to read a file.
+	The Kernel translates that into low-level instructions for the disk.
+Common system call categories:
+	Process Control (fork, exec)
+	File Management (open, read, write)
+	Memory Management (mmap, brk)
+	Device Control (ioctl)
+	Networking (socket, bind, connect)
+
+LINUX DISTRIBUTIONS
+When Linus Torvalds released the Linux OS source code as free and open-source, it allowed companies and communities around the world to build their customized versions based on their unique requirements.
+These customized versions are known as Linux distributions (distros) or flavors.
+As of now, there are 600+ active Linux distributions, each designed for different use cases like servers, desktops, cybersecurity, enterprise solutions, and more.
+Examples of Popular Linux Distributions:
+Distribution						Description
+Amazon Linux			Optimized for AWS cloud-based applications.
+Ubuntu				User-friendly, widely used for desktops and servers.
+Red Hat (RHEL)		Enterprise-grade distribution, often used in large corporations.
+Debian				Stable and secure; a base for many other distros including Ubuntu.
+Kali Linux			Tailored for penetration testing and cybersecurity professionals.
+Fedora				A cutting-edge distro backed by Red Hat; often used by developers.
+Each distribution contributes to the rich diversity and flexibility of the Linux ecosystem, making it suitable for almost any type of computing task.
+
+HOW TO SETUP LINUX MACHINE
+Approach 1: Install Linux OS Directly on Your System
+	Download a Linux distribution (e.g., Ubuntu, Fedora, Debian) from its official website.
+	Use tools like Rufus or BalenaEtcher to create a bootable USB.
+	Restart your system and boot from the USB drive.
+	Install Linux as your primary operating system or alongside Windows (dual boot).
+Approach 2: Use VirtualBox to Run Linux as a Virtual Machine
+	Download and install Oracle VirtualBox (or VMware Workstation Player).
+	Download a Linux ISO file (e.g., Ubuntu).
+	Create a new VM in VirtualBox:
+	Allocate memory, storage, and choose the downloaded ISO.
+	Boot and install Linux inside the VM — great for safe experimentation!
+Approach 3: Deploy a Free Linux VM on AWS Cloud
+	Sign up for the AWS Free Tier:
+	Watch this setup guide
+	Go to EC2 Dashboard and launch an instance.
+	Select a Linux-based AMI (Amazon Machine Image), like Ubuntu or Amazon Linux.
+	Configure security groups, key pair, and launch.
+	Access the Linux VM via SSH from your terminal.
+	Enjoy 750 hours/month for 12 months under AWS Free Tier!
+
+LINUX COMMAND MASTERY
+| 		Command             	| 						Description                                                     	| 				Example                                         	|
+|----------------------------------------	|-----------------------------------------------------------------------------------------------------	|--------------------------------------------------------------------------	|
+| 	whoami               		| 	Displays the currently logged-in username.                                  		| 	whoami                                                                   	|
+| 	pwd                  		| 	Shows the present working directory.                                        		| 	pwd                                                                        	|
+| 	date                 			| 	Prints today’s date and time.                                               			| 	date                                                                 		|
+|	cal                  			| 	Displays the calendar for the current month.                                		| 	cal                                                                  		|	
+| 	cal 2025             		| 	Shows the calendar for the entire year 2025.                                		| 	cal 2025                                                                  	|
+| 	clear                			| 	Clears the terminal screen.                                                 			| 	clear                            	                                        |
+| 	mkdir                		| 	Creates a new directory.                                                   			| 	mkdir s3 (directory name 's3')	                                |
+| 	rmdir               			| 	Removes an empty directory.                                                			| 	rmdir qa                                                                  	|
+| 	rm -rf <dir>            		| 	Deletes a non-empty directory and its contents.                            		| 	rm -rf devops                                                          	|
+| 	ls                   			|	Lists files and directories in the current working directory.               	| 	ls                                                                        	|
+| 	ls -l               			| 	Displays files in detailed (long) format, sorted alphabetically.            	| 	ls -l                                                                      	|
+| 	ls -lr           			| 	Shows files in reverse alphabetical order.                                  		| 	ls -lr                                                                     	|
+| 	ls -lt               			| 	Lists files with the newest files at the top.                               		| 	ls -lt                                                                     	|
+| 	ls -ltr              			| 	Shows files with the oldest files at the top.                              		| 	ls -ltr                                                                    	|
+| 	ls -la               			| 	Displays all files, including hidden ones.                                  		| 	ls -la                                                                     	|
+| 	touch                		| 	Creates empty files.                                                       				| 	touch t1.txt                                                             	|
+| 	cd                  			| 	Changes the current directory.                                             			| 	cd dir-name                                                            	|
+|	cd ..					|	Go to the home directory									|	cd ..										|
+| 	cd ~                 		|	Navigates to the current user’s home directory.                            		| 	cd ~                                                                       	|
+| 	rm                   			| 	Deletes a file or directory.                                               			| 	rm t1.txt                                                                  |
+| 	mv 			           	| 	Renames a file/directory.                                         				| 	mv t1.txt t2.txt <existing name> <new name>      	|
+|	mv 					|	Moves a file/directory										|	mv /home/a /home/b 						| 
+| 	cat                  			| 	Creates a new file, appends data, displays content, or merges files.      | 	cat t1.txt                                                               	|
+|	cat >				|	Create new file with content									|	cat > t2.txt								|
+|	cat >>				|	Appends data in existing file									|	cat >> t2.txt								|
+| 	cat -n               			| 	Displays file content with line numbers.                                   		| 	cat -n t1.txt                                                             	|
+| 	tac                  			| 	Displays file content in reverse order (bottom to top).                    	| 	tac t1.txt                                                                	|
+| 	cp                   			| 	Copies file content from one file to another.                              		| 	cp t1.txt t2.txt                                                         	|
+|	cp					|	Merging files												|	cp t1.txt t2.txt > t3.txt						|
+| 	head                 		| 	Displays the first 10 lines of a file (default) 					      	| 	head t1.txt                                                              	|
+|	head -n 20			|	Display the first 20 lines of file								|	head -n 20 t2.txt							|
+| 	tail                 			| 	Displays the last 10 lines of a file (default) or specified number.        	| 	tail t1.txt                                                                	|
+|	tail -n 20				|	Display the last 20 lines of file								|	tail -n 20 t2.txt								|
+| 	grep                 		| 	Searches for specific content within a file.                               		| 	grep 'hello' test.txt                                                  	|
+| 	grep -i              		| 	Performs a case-insensitive search.                                        			| 	grep -i 'hello' test.txt                                               	|
+| 	grep -n              		| 	Shows matching lines with line numbers.                                    		| 	grep -n 'hello' test.txt                                              	|
+| 	grep -v             		| 	Displays lines that do not contain the keyword.                            		| 	grep -v 'hello' test.txt                                         	|
+|	grep <> *				|	Search the word in all the files within the current directory			|	grep 'hello' *								|
+| 	wc                   			| 	Counts lines, words, and characters in a file.                             		| 	wc test.txt                                                               	|
+| 	wc -l                			| 	Counts only the number of lines.                                           			| 	wc -l test.txt                                                            |
+| 	wc -w                		| 	Counts only the number of words.                                           		| 	wc -w test.txt                                                          	|
+| 	wc -c               			| 	Counts only the number of bytes.                                           			| 	wc -c test.txt                                                           	|
+| 	wc -m                		| 	Counts only the number of characters.                                      		| 	wc -m test.txt                                                          |
+			
+TEXT EDITORS IN LINUX 
+VISUAL EDITOR (VI EDITOR)
+VI operates in three main modes:
+	1. Command Mode (Default)
+		Used to navigate and issue commands.
+		This is the mode vi starts in.
+		Press Esc to ensure you're in command mode.
+	2. Insert Mode
+		Used to edit or insert text.
+		Enter by pressing i in command mode.
+		Other variants: a (append), o (open new line).
+	3. Escape Mode
+		Activated by pressing Esc from insert mode.
+		Returns to command mode to allow saving, quitting, etc.
+
+| 	vi                   			| 	Creates or edits a file in the vi text editor.                             			| 	vi t3.txt                                                                  	|
+| 	i					|	Enter Insert Mode											|											|
+| 	:wq					|	Save and Quit												|											|
+| 	:q!					|	Quit Without Saving										|											|
+| 	:w					|	Save Only												|											|	
+| 	:q					|	Quit Only (if no changes)									|											|
+
+STREAM EDITOR (SED EDITOR)
+SED stands for Stream Editor – a powerful command-line tool used for text processing in Linux.
+Key Features of SED
+Used for: Substituting text, Deleting lines, Printing specific parts and Inserting text.
+It processes text streams or files without opening them in a traditional editor.
+SED can be used in shell scripts, command-line pipelines and automation tasks.
+
+1. SUBSTITUTING COMMANDS
+| 	sed              			| 	Stream Editor for text processing (substitute, delete, print, insert). 	| 	sed 's/linux/unix/' data.txt                                       	|
+|	sed 's///'				|	(Substitute) Replace the **first occurrence**					|	sed 's/linux/unix/' data.txt   					|
+| 	sed 's///2'             		| 	Replace the **second occurrence** 						 	| 	sed 's/linux/unix/2' data.txt                                     	|
+| 	sed 's///g'              		| 	Replace the  **all occurrences** 								| 	sed 's/linux/unix/g' data.txt                                     	|
+| 	sed -i               			| 	Substitutes and saves changes in the original file.                        		| 	sed -i 's/linux/unix/g' data.txt                                  |
+
+2. DELETING COMMANDS 
+|	sed -i '1d'				|	Delete the **first line** of a file								|	sed -i '1d' data.txt							|
+| 	sed -i '$d'              		| 	Delete the **last line** of a file 								| 	sed -i '$d' data.txt                                     		|
+| 	sed -i 'n, $d' 			| 	Delete data from **nth line to the last line**.                        		| 	sed -i 'n,$d' data.txt                                 		|
+
+3. PRINTING COMMANDS
+| 	sed -n               		| 	Prints specific lines.                                                    				| 	sed -n '10,20p' data.txt                                            |
+
+4. INSERTING COMMANDS 
+|	sed '2i\'				|	Insert text at the **2nd line**  								|	sed '2i\I love India' data.txt 					|
+| 	sed '$a\'              		| 	Insert text at the **last line** 								| 	sed '$a\I am from PSAIT' data.txt                          	|
+
+NANO EDITOR 
+Nano is a simple and user-friendly text editor used in the command-line interface.
+It’s easier for beginners compared to vi or vim.
+Intuitive interface.
+Shows commands at the bottom.
+Perfect for quick edits and simple file creation.
+
+| 	nano		              		| 	Creates or edits a file in the vi text editor.						| 	nano t.txt                          					|
+|	Ctrl + O				|	Save File													|
+|	Ctrl + X				|	Exit														|
+|	Ctrl + X + Y + Enter	|	Save & Exit												|
+| 	Ctrl + K				|	Cut Text													|
+| 	Ctrl + U				|	Paste Cut Text												|
+| 	Alt + 6				|	Copy Text												|
+| 	Ctrl + W				|	Search Text 												|
+| 	Ctrl + W, then Enter	|	Repeat Search												|
+| 	Ctrl + \				|	Replace Text												|
+| 	Ctrl + _				|	Go to Line Number											|
+| 	Alt + U				|	Undo Last Action											|
+|	Alt + E				|	Redo 													|
+| 	Ctrl + J				|	Justify (Format) Paragraph									|
+|	Ctrl + G				|	Help Menu												|
+
+USER MANAGEMENT IN LINUX
+Linux is a multi-user operating system and multiple users can log in and operate simultaneously without interfering with each other’s activities.
+Each user operates in a separate environment and this ensures system security and resource isolation.
+Default user in AWS EC2 (Amazon Linux), ec2-user — comes with sudo (superuser) privileges.
+When a new user is created, Linux automatically assigns a home directory at /home/username.
+
+| 	sudo useradd              	| 	Creates a new user.                                                        				| 	sudo useradd john                                                   	|
+| 	sudo passwd               	| 	Sets or updates a user’s password.                                         			| 	sudo passwd john                                                    	|
+| 	cat /etc/passwd      		| 	Displays all created users.                                                			| 	cat /etc/passwd                                                       	|
+| 	su                   			| 	Switches to another user account.                                          			| 	su john                                                                    	|
+| 	sudo userdel              	| 	Deletes a user account.                                                    			| 	sudo userdel john                                                    	|
+| 	sudo userdel --remove 	| 	Deletes a user along with their home directory.                            		| 	sudo userdel --remove john                                    	|
+| 	sudo usermod l            	| 	Changes a username or modifies user settings.                              		| 	sudo usermod -l newjohn john                             	|
+|	/etc/passwd			|	Stores general user information.								|											|
+|	/etc/shadow			|	Stores encrypted passwords and security-related data.				|											|
+
+GROUP MANAGEMENT IN LINUX
+Groups allow administrators to assign permissions (read, write, execute) to multiple users at once instead of managing permissions for each user individually.
+Instead of modifying each user’s access manually, administrators can add or remove users from a group to grant or revoke access.
+When a new user is created in Linux, a **default user group** with the same name is also created.
+
+| 	cat /etc/group       		| 	Displays all groups in Linux.                                              			| 	cat /etc/group                                                          |
+| 	groupadd             		| 	Creates a new group.                                                       			| 	sudo groupadd developers                                      	|
+| 	usermod -aG          		| 	Adds a user to a group.                                                    			| 	sudo usermod -aG developers john                        	|
+| 	gpasswd              		| 	Removes a user from a group.                                               			| 	sudo gpasswd -d john developers                           	|
+| 	getent               		| 	Lists all users in a specific group.                                       			| 	getent group developers                                         	|
+| 	id                   			| 	Checks which groups a user belongs to.                                     		| 	id john                                                                    	|
+| 	groupdel             		| 	Deletes a group.                                                           				| 	sudo groupdel developers                                      	|
+| 	groupmod             		| 	Renames a group.                                                           				| 	sudo groupmod -n devs developers                        	|
+
+PASSWORD BASED AUTHENTICATION IN LINUX
+To enable password-based authentication in a Linux system, we need to modify two important configuration files:
+1. sudoers
+	Location: /etc/sudoers (only edit this file with visudo to avoid syntax errors!)
+	Purpose: Controls who can run commands with sudo and under what conditions.
+	What it does: Grants or restricts sudo (superuser) access to users or groups.
+Warning:	Editing the sudoers file incorrectly can break the system. Always use the visudo command to edit it safely
+2. sshd_config
+	Location: /etc/ssh/sshd_config
+	Purpose: This is the configuration file for the SSH daemon (sshd).
+	What it does: Controls how the server handles SSH connections, including, Whether password or key authentication is allowed, Which users can connect, Port number for SSH, Whether root 	login is allowed.
+
+| 	sudo cat /etc/sudoers     	| 	Displays the sudoers file content.                                         			| 	sudo cat /etc/sudoers                                              	|
+| 	sudo visudo               	| 	Safely edits the sudoers file.                                             			| 	sudo visudo                                                            	|
+
+Add the following line at the end of the file:
+<username> ALL=(ALL:ALL) ALL
+Press CTRL + X, then Y, and hit Enter.
+How to Enable Password-Based Authentication for Users?
+By default, password authentication is disabled in Linux virtual machines (VMs) for security reasons. To enable it:
+
+Open the sshd_config file:
+| 	vi /etc/ssh/sshd_config 	| 	Edits the SSH configuration file.                                       			| 	sudo vi /etc/ssh/sshd_config                                   	|
+
+Modify the following line, Find this line:
+PasswordAuthentication no
+Change it to:
+PasswordAuthentication yes
+Save and exit (ESC → :wq → Enter).
+| 	systemctl            		| 	Restarts the SSH service.                                                  			| 	sudo systemctl restart sshd                                     	|
+
+Restart the SSH service for changes to take effect. Now, you can connect to the Linux VM using a username and password:
+
+$ ssh username@public-ip
+| 	ssh                  			| 	Connects to a Linux VM using username and password.                       | 	ssh john@192.168.1.100                                        	|
+
+FILE PERMISSION IN LINUX
+File permissions control who can read, write, or execute files and directories. This ensures restricted access for security and collaboration.
+Symbol 		| 	Permission 		| 		Meaning
+r 			| 	Read 			| 	View contents of the file
+w	 		| 	Write 			| 	Modify or delete the file
+x 			| 	Execute 			| 	Run the file as a program/script
+Permissions are shown using 9 characters:	rwxrwxrwx  f1.txt
+Split into 3 groups of 3 characters:
+Owner (User) → rwx
+Group → rwx
+Others (World) → rwx
+Examples:	r--r-xr--  f2.txt
+Owner: Read (r--)
+Group: Read + Execute (r-x)
+Others: Read (r--)
+
+CHANGING PERMISSION
+Use the chmod command to modify file permissions:
+Symbol		Meaning			Example
++		Add permission		u+x
+-		Remove permission		g-w
+=		Set exact permission	o=r
+
+ 	chmod                		| 	Modifies file permissions (symbolic or numeric format).                    	| 	chmod 		                                                    	|
+| 	chmod u+x 			| 	Give execute permission to the user                    					| 	chmod u+xf1.txt                                                    	|
+| 	chmod g+w   			| 	Give write permission to the group					                    	| 	chmod g+w f1.txt                                                   	|
+|	chmod g+rwx 			|	Grant all permissions to the group								|	chmod g+rwx f1.txt							|
+| 	chmod o-x       	      	| 	Remove execute permission from others                    				| 	chmod o-x f1.txt                                                    	|
+|	chmod o-rwx 			|	Remove all permissions from others							|	chmod o-rwx f1.txt							|
+
+| 	sudo chown [user]         	| 	Changes the owner of a file/directory.                                     		| 	sudo chown john f1.txt                                           	|
+| 	sudo chown : [group]	| 	Changes the group of a file/directory.                                     		| 	sudo chown :developers f1.txt                               	|
+| 	sudo chown [u]:[g] 		| 	Changes both owner and group.                                              		| 	sudo chown john:developers f1.txt                        	|
+| 	find                 			| 	Searches for files/directories based on criteria.                          		| 	sudo find /home -name "f1.txt"                              	|
+| 	zip                  			| 	Compresses files into a .zip archive.                                      			| 	zip my_archive.zip *.txt                                         	|
+| 	unzip                		| 	Extracts a .zip file.                                                      				| 	unzip my_archive.zip                                             	|
+| 	unzip -l             		| 	Lists contents of a ZIP file.                                              			| 	unzip -l my_archive.zip                                          	|
+| 	zip -d               		| 	Deletes files from a ZIP archive.                                          			| 	zip -d my_archive.zip file2.txt                                |
+| 	zip -e               			| 	Creates a password-protected ZIP file.                                     		| 	zip -e secure_data.zip secret_file.txt                      	|
+| 	ping                 			| 	Checks connectivity to a URL or IP address.                                		| 	ping google.com                                                      |
+| 	wget                 		| 	Downloads files from the internet.                                         			| 	wget http://example.com/file.txt                            	|
+| 	curl                 			| 	Sends HTTP requests to a server.                                           			| 	curl https://zenquotes.io/api/random                      	|
+| 	ifconfig            		| 	Displays the IP address of the machine.                                    		| 	ifconfig                                                                   	|
+| 	git --version        		| 	Checks if the Git client is installed.                                     			| 	git --version                                                            	|
+| 	yum                  		| 	Installs software on Amazon Linux/Red Hat/CentOS.                         	| 	sudo yum install git                                                	|
+| 	apt                  			| 	Installs software on Ubuntu/Debian.                                        		| 	sudo apt install git                                                   |
+| 	whereis              		| 	Checks the installation path of a command.                                 		| 	whereis git                                                              	|
+| 	yum remove           		| 	Uninstalls software.                                                       				| 	sudo yum remove git -y     					|
