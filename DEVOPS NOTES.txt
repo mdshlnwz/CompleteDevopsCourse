@@ -23,7 +23,7 @@ GOALS OF DEVOPS
 KEY DEVOPS PRACTICES
 Practices			| 		Description 								| 				Tools
 CI/CD				| Automate code integration, testing, and deployment for faster, reliable releases.	| 	Jenkins, GitHub Actions, GitLab CI, CircleCI
-Infrastructure as Code (IaC) 	| Define and manage infrastructure using code. 					| 	Terraform, Ansible, Pulumi, AWS CloudFormation
+Infrastructure as Code (IaC) 	| Define and manage infrastructure using code. 						| 	Terraform, Ansible, AWS CloudFormation
 Automated Testing 		| Run tests automatically to catch bugs early in the development cycle. 		| 	Selenium, JUnit, TestNG, Cypress
 Monitoring & Logging 		| Track app performance, get real-time alerts, and troubleshoot efficiently. 		| 	Prometheus, Grafana, ELK Stack, Datadog
 Containerization 		| Use containers to package and run apps consistently across environments. 		| 	Docker, Kubernetes, Podman, OpenShift
@@ -52,8 +52,8 @@ Continuous Integration 	| Code is integrated and tested frequently to ensure imm
 Continuous Testing 	| Automated testing is performed continuously to ensure code quality. 		| - JUnit 	- Selenium 		- Postman  	- PyTest
 Continuous Deployment	| Changes are automatically deployed to production or staging. 			| - Docker	- Kubernetes  		- AWS CodePipeline  
 Continuous Monitoring 	| Continuous monitoring of applications and infrastructure. 			| - Prometheus - Nagios  		- New Relic	- Grafana
-Continuous Feedback 	| Continuous feedback helps improve development and operational processes. 	| - Slack	- Trello  	- Jira  		- GitLab
-Continuous Operations 	| Operations are automated to ensure smooth functioning in production. 		| - Ansible	- Terraform  	- Chef  		- Puppet
+Continuous Feedback 	| Continuous feedback helps improve development and operational processes. 	| - Slack	- Trello  		- Jira  	- GitLab
+Continuous Operations 	| Operations are automated to ensure smooth functioning in production. 		| - Ansible	- Terraform  		- Chef  	- Puppet
 These phases ensure automation, rapid feedback, and continuous improvement throughout the software lifecycle.
 
 CONTINUOUS DEVELOPMENT
@@ -149,9 +149,9 @@ The name Linux is derived from a combination of:
 He released Linux under the GNU General Public License (GPL), allowing anyone to freely use, modify, and distribute it — kickstarting one of the most successful open-source projects ever.
 
 LINUX ARCHITECTURE COMPONENTS
-Component 	| 		Description 									| Examples / Responsibilities
-App/Cmds 	| User-space programs that run on Linux. 							| Web browsers, text editors, CLI tools like ls, cd, cat
-Shell 		| Interface between users and the system. Interprets commands and interacts with the kernel. 	| Bash, Zsh, Fish
+Component 	| 		Description 										| Examples / Responsibilities
+App/Cmds 	| User-space programs that run on Linux. 								| Web browsers, text editors, CLI tools like ls, cd
+Shell 		| Interface between users and the system. Interprets commands and interacts with the kernel. 		| Bash, Zsh, Fish
 Kernel 		| The core of the OS that manages all system resources. 			| Process management, memory management, device handling, system calls
 Hardware Components 	| Physical components the OS interacts with. 				| CPU, RAM, HDD/SSD, NICs, peripherals (keyboard, mouse, printer)
 
@@ -215,12 +215,12 @@ LINUX COMMAND MASTERY
 
 FILE MANAGEMENT COMMANDS
 
-Commands		| 	Description                                	| 				Example                                         	|
-whoami 	         	|	Displays the currently logged-in username.      | 	whoami                                                                   	|
-| 	pwd                  		| 	Shows the present working directory.                                        		| 	pwd                                                                        	|
-| 	date                 			| 	Prints today’s date and time.                                               			| 	date                                                                 		|
-|	cal                  			| 	Displays the calendar for the current month.                                		| 	cal                                                                  		|	
-| 	cal 2025             		| 	Shows the calendar for the entire year 2025.                                		| 	cal 2025                                                                  	|
+Commands		| 	Description                                	| 	Example                                         	
+whoami 	         	|	Displays the currently logged-in username.      | 	whoami                                                                   	
+pwd             	| 	Shows the present working directory.            | 	pwd                                                                        	
+date                 	| 	Prints today’s date and time.                   | 	date                                                                 		
+cal                  	| 	Displays the calendar for the current month.    | 	cal                                                                  			
+cal 2025        | 	Shows the calendar for the entire year 2025.    | 	cal 2025                                                                  	|
 | 	clear                			| 	Clears the terminal screen.                                                 			| 	clear                            	                                        |
 | 	mkdir                		| 	Creates a new directory.                                                   			| 	mkdir s3 (directory name 's3')	                                |
 | 	rmdir               			| 	Removes an empty directory.                                                			| 	rmdir qa                                                                  	|
