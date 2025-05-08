@@ -212,78 +212,77 @@ Approach 3: Deploy a Free Linux VM on AWS Cloud
 	Enjoy 750 hours/month for 12 months under AWS Free Tier!
 
 LINUX COMMAND MASTERY
-
 FILE MANAGEMENT COMMANDS
 
-Commands		| 	Description                                	| 	Example                                         	
-whoami 	         	|	Displays the currently logged-in username.      | 	whoami                                                                   	
-pwd             	| 	Shows the present working directory.            | 	pwd                                                                        	
-date                 	| 	Prints today’s date and time.                   | 	date                                                                 		
-cal                  	| 	Displays the calendar for the current month.    | 	cal                                                                  			
-cal 2025        | 	Shows the calendar for the entire year 2025.    | 	cal 2025                                                                  	|
-| 	clear                			| 	Clears the terminal screen.                                                 			| 	clear                            	                                        |
-| 	mkdir                		| 	Creates a new directory.                                                   			| 	mkdir s3 (directory name 's3')	                                |
-| 	rmdir               			| 	Removes an empty directory.                                                			| 	rmdir qa                                                                  	|
-| 	rm -rf <dir>            		| 	Deletes a non-empty directory and its contents.                            		| 	rm -rf devops                                                          	|
-| 	ls                   			|	Lists files and directories in the current working directory.               	| 	ls                                                                        	|
-| 	ls -l               			| 	Displays files in detailed (long) format, sorted alphabetically.            	| 	ls -l                                                                      	|
-| 	ls -lr           			| 	Shows files in reverse alphabetical order.                                  		| 	ls -lr                                                                     	|
-| 	ls -lt               			| 	Lists files with the newest files at the top.                               		| 	ls -lt                                                                     	|
-| 	ls -ltr              			| 	Shows files with the oldest files at the top.                              		| 	ls -ltr                                                                    	|
-| 	ls -la               			| 	Displays all files, including hidden ones.                                  		| 	ls -la                                                                     	|
-| 	touch                		| 	Creates empty files.                                                       				| 	touch t1.txt                                                             	|
-| 	cd                  			| 	Changes the current directory.                                             			| 	cd dir-name                                                            	|
-|	cd ..					|	Go to the home directory									|	cd ..										|
-| 	cd ~                 		|	Navigates to the current user’s home directory.                            		| 	cd ~                                                                       	|
-| 	rm                   			| 	Deletes a file or directory.                                               			| 	rm t1.txt                                                                  |
-| 	mv 			           	| 	Renames a file/directory.                                         				| 	mv t1.txt t2.txt <existing name> <new name>      	|
-|	mv 					|	Moves a file/directory										|	mv /home/a /home/b 						| 
-| 	cat                  			| 	Creates a new file, appends data, displays content, or merges files.      	| 	cat t1.txt                                                               	|
-|	cat >				|	Create new file with content									|	cat > t2.txt								|
-|	cat >>				|	Appends data in existing file									|	cat >> t2.txt								|
-| 	cat -n               			| 	Displays file content with line numbers.                                   		| 	cat -n t1.txt                                                             	|
-| 	tac                  			| 	Displays file content in reverse order (bottom to top).                    	| 	tac t1.txt                                                                	|
-| 	cp                   			| 	Copies file content from one file to another.                              		| 	cp t1.txt t2.txt                                                         	|
-|	cp					|	Merging files												|	cp t1.txt t2.txt > t3.txt						|
-| 	head                 		| 	Displays the first 10 lines of a file (default) 					      	| 	head t1.txt                                                              	|
-|	head -n 20			|	Display the first 20 lines of file								|	head -n 20 t2.txt							|
-| 	tail                 			| 	Displays the last 10 lines of a file (default) or specified number.        	| 	tail t1.txt                                                                	|
-|	tail -n 20				|	Display the last 20 lines of file								|	tail -n 20 t2.txt								|
-| 	find                 			| 	Searches for files/directories based on criteria.                          		| 	sudo find /home -name "f1.txt"                              	|
-| 	grep                 		| 	Searches for specific content within a file.                               		| 	grep 'hello' test.txt                                                  	|
-| 	grep -i              		| 	Performs a case-insensitive search.                                        			| 	grep -i 'hello' test.txt                                               	|
-| 	grep -n              		| 	Shows matching lines with line numbers.                                    		| 	grep -n 'hello' test.txt                                              	|
-| 	grep -v             		| 	Displays lines that do not contain the keyword.                            		| 	grep -v 'hello' test.txt                                         	|
-|	grep <> *				|	Search the word in all the files within the current directory			|	grep 'hello' *								|
-| 	wc                   			| 	Counts lines, words, and characters in a file.                             		| 	wc test.txt                                                               	|
-| 	wc -l                			| 	Counts only the number of lines.                                           			| 	wc -l test.txt                                                            |
-| 	wc -w                		| 	Counts only the number of words.                                           		| 	wc -w test.txt                                                          	|
-| 	wc -c               			| 	Counts only the number of bytes.                                           			| 	wc -c test.txt                                                           	|
-| 	wc -m                		| 	Counts only the number of characters.                                      		| 	wc -m test.txt                                                          |
-			
+COMMANDS		| 	DESCRIPTION                                				| 	EXAMPLE                                         	
+whoami 	         	|	Displays the currently logged-in username.      			| 	whoami                                                      
+pwd             	| 	Shows the present working directory.            			| 	pwd                                                        
+date                 	| 	Prints today’s date and time.                   			| 	date                                                   	
+cal                  	| 	Displays the calendar for the current month.    			| 	cal        
+cal 2025      		| 	Shows the calendar for the entire year 2025.    			| 	cal 2025                                                   
+clear           	| 	Clears the terminal screen.                     			| 	clear                         	                            
+mkdir           	| 	Creates a new directory.                        			| 	mkdir s3 (directory name 's3')	                
+rmdir               	| 	Removes an empty directory.                     			| 	rmdir qa                                                 
+rm -rf <dir>            | 	Deletes a non-empty directory and its contents.         		| 	rm -rf devops      
+ls                   	|	Lists files and directories in the current working directory.           | 	ls                                                 
+ls -l               	| 	Displays files in detailed (long) format, sorted alphabetically.       	| 	ls -l                   
+ls -lr           	| 	Shows files in reverse alphabetical order.                    		| 	ls -lr                               
+ls -lt               	| 	Lists files with the newest files at the top.                           | 	ls -lt                                  
+ls -ltr              	| 	Shows files with the oldest files at the top.           		| 	ls -ltr                                          
+ls -la               	| 	Displays all files, including hidden ones.     				| 	ls -la             
+touch          		| 	Creates empty files.                      				| 	touch t1.txt                                              
+cd                  	| 	Changes the current directory.                                          | 	cd dir-name         
+cd ..			|	Go to the home directory						|	cd ..		
+cd ~                 	|	Navigates to the current user’s home directory.               		| 	cd ~                                                
+rm                   	| 	Deletes a file or directory.                                            | 	rm t1.txt                    
+mv 			| 	Renames a file/directory.                                    		| 	mv t1.txt t2.txt <existing name> <new name> 
+mv 			|	Moves a file/directory							|	mv /home/a /home/b 		
+cat             	| 	Creates a new file, appends data, displays content, or merges files.    | 	cat t1.txt                                      
+cat >			|	Create new file with content						|	cat > t2.txt						
+cat >>			|	Appends data in existing file						|	cat >> t2.txt					
+cat -n               	| 	Displays file content with line numbers.                                | 	cat -n t1.txt      
+tac           		| 	Displays file content in reverse order (bottom to top).               	| 	tac t1.txt                                          
+cp                   	| 	Copies file content from one file to another.                          	| 	cp t1.txt t2.txt                                     
+cp			|	Merging files								|	cp t1.txt t2.txt > t3.txt
+head                 	| 	Displays the first 10 lines of a file (default) 		      	| 	head t1.txt             
+head -n 20		|	Display the first 20 lines of file					|	head -n 20 t2.txt			
+tail                 	| 	Displays the last 10 lines of a file (default) or specified number.     | 	tail t1.txt                    
+tail -n 20		|	Display the last 20 lines of file					|	tail -n 20 t2.txt				
+find                 	| 	Searches for files/directories based on criteria.             		| 	sudo find /home -name "f1.txt"                       
+grep                 	| 	Searches for specific content within a file.                            | 	grep 'hello' test.txt                                 
+grep -i              	| 	Performs a case-insensitive search.                           		| 	grep -i 'hello' test.txt
+grep -n              	| 	Shows matching lines with line numbers.                       		| 	grep -n 'hello' test.txt                               
+grep -v             	| 	Displays lines that do not contain the keyword.                         | 	grep -v 'hello' test.txt                     
+grep <> *		|	Search the word in all the files within the current directory		|	grep 'hello' *
+wc            		| 	Counts lines, words, and characters in a file.                 		| 	wc test.txt              
+wc -l      		| 	Counts only the number of lines.                      			| 	wc -l test.txt   
+wc -w                	| 	Counts only the number of words.                                        | 	wc -w test.txt                  
+wc -c         		| 	Counts only the number of bytes.                                        | 	wc -c test.txt   
+wc -m          		| 	Counts only the number of characters.                       		| 	wc -m test.txt                                         
+
 TEXT EDITORS IN LINUX 
-VISUAL EDITOR (VI EDITOR)
+1. VISUAL EDITOR (VI EDITOR)
 VI operates in three main modes:
-	1. Command Mode (Default)
-		Used to navigate and issue commands.
-		This is the mode vi starts in.
-		Press Esc to ensure you're in command mode.
-	2. Insert Mode
-		Used to edit or insert text.
-		Enter by pressing i in command mode.
-		Other variants: a (append), o (open new line).
-	3. Escape Mode
-		Activated by pressing Esc from insert mode.
-		Returns to command mode to allow saving, quitting, etc.
+1. Command Mode (Default)
+	Used to navigate and issue commands.
+	This is the mode vi starts in.
+	Press Esc to ensure you're in command mode.
+2. Insert Mode
+	Used to edit or insert text.
+	Enter by pressing i in command mode.
+	Other variants: a (append), o (open new line).
+3. Escape Mode
+	Activated by pressing Esc from insert mode.
+	Returns to command mode to allow saving, quitting, etc.
 
-| 	vi                   			| 	Creates or edits a file in the vi text editor.                             			| 	vi t3.txt                                                                  	|
-| 	i					|	Enter Insert Mode											|											|
-| 	:wq					|	Save and Quit												|											|
-| 	:q!					|	Quit Without Saving										|											|
-| 	:w					|	Save Only												|											|	
-| 	:q					|	Quit Only (if no changes)									|											|
+vi                   	| 	Creates or edits a file in the vi text editor.              		| 	vi t3.txt        
+i			|	Enter Insert Mode							|							
+:wq			|	Save and Quit								|	
+:q!			|	Quit Without Saving							|
+:w			|	Save Only								|		
+:q			|	Quit Only (if no changes)						|											
 
-STREAM EDITOR (SED EDITOR)
+2. STREAM EDITOR (SED EDITOR)
 SED stands for Stream Editor – a powerful command-line tool used for text processing in Linux.
 Key Features of SED
 Used for: Substituting text, Deleting lines, Printing specific parts and Inserting text.
@@ -291,46 +290,42 @@ It processes text streams or files without opening them in a traditional editor.
 SED can be used in shell scripts, command-line pipelines and automation tasks.
 
 1. SUBSTITUTING COMMANDS
-| 	sed              			| 	Stream Editor for text processing (substitute, delete, print, insert). 	| 	sed 's/linux/unix/' data.txt                                       	|
-|	sed 's///'				|	(Substitute) Replace the **first occurrence**					|	sed 's/linux/unix/' data.txt   					|
-| 	sed 's///2'             		| 	Replace the **second occurrence** 						 	| 	sed 's/linux/unix/2' data.txt                                     	|
-| 	sed 's///g'              		| 	Replace the  **all occurrences** 								| 	sed 's/linux/unix/g' data.txt                                     	|
-| 	sed -i               			| 	Substitutes and saves changes in the original file.                        		| 	sed -i 's/linux/unix/g' data.txt                                  	|
+sed              	| 	Stream Editor for text processing (substitute, delete, print, insert). 	| 	sed 's/linux/unix/' data.txt            
+sed 's///'		|	(Substitute) Replace the **first occurrence**				|	sed 's/linux/unix/' data.txt   		
+sed 's///2'             | 	Replace the **second occurrence** 					| 	sed 's/linux/unix/2' data.txt                               sed 's///g'             | 	Replace the  **all occurrences** 					| 	sed 's/linux/unix/g' data.txt                               sed -i               	| 	Substitutes and saves changes in the original file.                     | 	sed -i 's/linux/unix/g' data.txt                        
 
 2. DELETING COMMANDS 
-|	sed -i '1d'				|	Delete the **first line** of a file								|	sed -i '1d' data.txt							|
-| 	sed -i '$d'              		| 	Delete the **last line** of a file 								| 	sed -i '$d' data.txt                                     		|
-| 	sed -i 'n, $d' 			| 	Delete data from **nth line to the last line**.                        		| 	sed -i 'n,$d' data.txt                                 			|
-
+sed -i '1d'		|	Delete the **first line** of a file					|	sed -i '1d' data.txt				
+sed -i '$d'             | 	Delete the **last line** of a file 					| 	sed -i '$d' data.txt                                    
+sed -i 'n, $d' 		| 	Delete data from **nth line to the last line**.                        	| 	sed -i 'n,$d' data.txt                                			
 3. PRINTING COMMANDS
-| 	sed -n               		| 	Prints specific lines.                                                    				| 	sed -n '10,20p' data.txt                                            |
-
+sed -n               	| 	Prints specific lines.                                                  | 	sed -n '10,20p' data.txt                                            
 4. INSERTING COMMANDS 
-|	sed '2i\'				|	Insert text at the **2nd line**  								|	sed '2i\I love India' data.txt 					|
-| 	sed '$a\'              		| 	Insert text at the **last line** 								| 	sed '$a\I am from PSAIT' data.txt                          	|
+sed '2i\'		|	Insert text at the **2nd line**  					|	sed '2i\I love India' data.txt 
+sed '$a\'              	| 	Insert text at the **last line** 					| 	sed '$a\I am from PSAIT' data.txt                          	
 
-NANO EDITOR 
+3. NANO EDITOR 
 Nano is a simple and user-friendly text editor used in the command-line interface.
 It’s easier for beginners compared to vi or vim.
 Intuitive interface.
 Shows commands at the bottom.
 Perfect for quick edits and simple file creation.
 
-| 	nano		              		| 	Creates or edits a file in the vi text editor.						| 	nano t.txt                          					|
-|	Ctrl + O				|	Save File													|
-|	Ctrl + X				|	Exit														|
-|	Ctrl + X + Y + Enter	|	Save & Exit												|
-| 	Ctrl + K				|	Cut Text													|
-| 	Ctrl + U				|	Paste Cut Text												|
-| 	Alt + 6				|	Copy Text												|
-| 	Ctrl + W				|	Search Text 												|
-| 	Ctrl + W, then Enter	|	Repeat Search												|
-| 	Ctrl + \				|	Replace Text												|
-| 	Ctrl + _				|	Go to Line Number											|
-| 	Alt + U				|	Undo Last Action											|
-|	Alt + E				|	Redo 													|
-| 	Ctrl + J				|	Justify (Format) Paragraph									|
-|	Ctrl + G				|	Help Menu												|
+nano		   	| 	Creates or edits a file in the vi text editor.				| 	nano t.txt 	
+Ctrl + O		|	Save File								|
+Ctrl + X		|	Exit									|
+Ctrl + X + Y + Enter	|	Save & Exit								|
+Ctrl + K		|	Cut Text								|
+Ctrl + U		|	Paste Cut Text								|
+Alt + 6			|	Copy Text								|
+Ctrl + W		|	Search Text 								|
+Ctrl + W, then Enter	|	Repeat Search								|
+Ctrl + \		|	Replace Text								|
+Ctrl + _		|	Go to Line Number							|
+Alt + U			|	Undo Last Action							|
+Alt + E			|	Redo 									|
+Ctrl + J		|	Justify (Format) Paragraph						|
+Ctrl + G		|	Help Menu								|
 
 USER MANAGEMENT IN LINUX
 Linux is a multi-user operating system and multiple users can log in and operate simultaneously without interfering with each other’s activities.
@@ -338,29 +333,29 @@ Each user operates in a separate environment and this ensures system security an
 Default user in AWS EC2 (Amazon Linux), ec2-user — comes with sudo (superuser) privileges.
 When a new user is created, Linux automatically assigns a home directory at /home/username.
 
-| 	sudo useradd              	| 	Creates a new user.                                                        				| 	sudo useradd john                                                   	|
-| 	sudo passwd               	| 	Sets or updates a user’s password.                                         			| 	sudo passwd john                                                    	|
-| 	cat /etc/passwd      		| 	Displays all created users.                                                			| 	cat /etc/passwd                                                       	|
-| 	su                   			| 	Switches to another user account.                                          			| 	su john                                                                    	|
-| 	sudo userdel              	| 	Deletes a user account.                                                    			| 	sudo userdel john                                                    	|
-| 	sudo userdel --remove 	| 	Deletes a user along with their home directory.                            		| 	sudo userdel --remove john                                    	|
-| 	sudo usermod l            	| 	Changes a username or modifies user settings.                              		| 	sudo usermod -l newjohn john                             	|
-|	/etc/passwd			|	Stores general user information.								|											|
-|	/etc/shadow			|	Stores encrypted passwords and security-related data.				|											|
+sudo useradd     	| 	Creates a new user.                                                        | 	sudo useradd john                                      
+sudo passwd             | 	Sets or updates a user’s password.                                         | 	sudo passwd john        
+cat /etc/passwd      	| 	Displays all created users.						   | 	cat /etc/passwd        
+su                   	| 	Switches to another user account.                                          | 	su john                                                
+sudo userdel            | 	Deletes a user account.                                                    | 	sudo userdel john           
+sudo userdel --remove 	| 	Deletes a user along with their home directory.                 	   |	sudo userdel --remove john            	
+sudo usermod l        	| 	Changes a username or modifies user settings.                              | 	sudo usermod -l newjohn john        
+/etc/passwd		|	Stores general user information.					   |				
+/etc/shadow		|	Stores encrypted passwords and security-related data.			   |											
 
 GROUP MANAGEMENT IN LINUX
 Groups allow administrators to assign permissions (read, write, execute) to multiple users at once instead of managing permissions for each user individually.
 Instead of modifying each user’s access manually, administrators can add or remove users from a group to grant or revoke access.
 When a new user is created in Linux, a **default user group** with the same name is also created.
 
-| 	cat /etc/group       		| 	Displays all groups in Linux.                                              			| 	cat /etc/group                                                          |
-| 	groupadd             		| 	Creates a new group.                                                       			| 	sudo groupadd developers                                      	|
-| 	usermod -aG          		| 	Adds a user to a group.                                                    			| 	sudo usermod -aG developers john                        	|
-| 	gpasswd              		| 	Removes a user from a group.                                               			| 	sudo gpasswd -d john developers                           	|
-| 	getent               		| 	Lists all users in a specific group.                                       			| 	getent group developers                                         	|
-| 	id                   			| 	Checks which groups a user belongs to.                                     		| 	id john                                                                    	|
-| 	groupdel             		| 	Deletes a group.                                                           				| 	sudo groupdel developers                                      	|
-| 	groupmod             		| 	Renames a group.                                                           				| 	sudo groupmod -n devs developers                        	|
+cat /etc/group       	| 	Displays all groups in Linux.                                              | 	cat /etc/group                      
+groupadd             	| 	Creates a new group.                                                       | 	sudo groupadd developers	
+usermod -aG          	| 	Adds a user to a group.                                                    | 	sudo usermod -aG developers john                    
+gpasswd              	| 	Removes a user from a group.                                               | 	sudo gpasswd -d john developers    
+getent               	| 	Lists all users in a specific group.                                       | 	getent group developers    
+id                   	| 	Checks which groups a user belongs to.                        		   | 	id john                                    
+groupdel             	| 	Deletes a group.                                                           | 	sudo groupdel developers    
+groupmod             	| 	Renames a group.                                                           | 	sudo groupmod -n devs developers                        	
 
 PASSWORD BASED AUTHENTICATION IN LINUX
 To enable password-based authentication in a Linux system, we need to modify two important configuration files:
@@ -374,9 +369,8 @@ Warning:	Editing the sudoers file incorrectly can break the system. Always use t
 	Purpose: This is the configuration file for the SSH daemon (sshd).
 	What it does: Controls how the server handles SSH connections, including, Whether password or key authentication is allowed, Which users can connect, Port number for SSH, Whether root 	login is allowed.
 
-| 	sudo cat /etc/sudoers     	| 	Displays the sudoers file content.                                         			| 	sudo cat /etc/sudoers                                              	|
-| 	sudo visudo               	| 	Safely edits the sudoers file.                                             			| 	sudo visudo                                                            	|
-
+sudo cat /etc/sudoers     | 	Displays the sudoers file content.                        		| 	sudo cat /etc/sudoers       
+sudo visudo               | 	Safely edits the sudoers file.                                          | 	sudo visudo                                                            	
 Add the following line at the end of the file:
 <username> ALL=(ALL:ALL) ALL
 Press CTRL + X, then Y, and hit Enter.
@@ -384,22 +378,21 @@ How to Enable Password-Based Authentication for Users?
 By default, password authentication is disabled in Linux virtual machines (VMs) for security reasons. To enable it:
 
 Open the sshd_config file:
-| 	vi /etc/ssh/sshd_config 	| 	Edits the SSH configuration file.                                       			| 	sudo vi /etc/ssh/sshd_config                                   	|
+vi /etc/ssh/sshd_config 	| 	Edits the SSH configuration file.                  		| 	sudo vi /etc/ssh/sshd_config         
 
 Modify the following line, Find this line:
 PasswordAuthentication- no
 Change it to:
 PasswordAuthentication- yes
 Save and exit (ESC → :wq → Enter).
-| 	systemctl            		| 	Restarts the SSH service.                                                  			| 	sudo systemctl restart sshd                                     	|
+systemctl            		| 	Restarts the SSH service.                      			| 	sudo systemctl restart sshd                                
 
-Restart the SSH service for changes to take effect. Now, you can connect to the Linux VM using a username and password:
-ssh username@public-ip
-| 	ssh                  			| 	Connects to a Linux VM using username and password.                       | 	ssh john@192.168.1.100                                        	|
+Restart the SSH service for changes to take effect. Now, you can connect to the Linux VM using a username and password: ssh username@public-ip
+ssh                  		| 	Connects to a Linux VM using username and password.     	| 	ssh john@192.168.1.100                                        	|
 
 FILE PERMISSION IN LINUX
 File permissions control who can read, write, or execute files and directories. This ensures restricted access for security and collaboration.
-Symbol 		| 	Permission 		| 		Meaning
+Symbol 			| 	Permission 		| 		Meaning
 r 			| 	Read 			| 	View contents of the file
 w	 		| 	Write 			| 	Modify or delete the file
 x 			| 	Execute 			| 	Run the file as a program/script
