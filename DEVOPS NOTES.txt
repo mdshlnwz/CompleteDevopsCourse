@@ -388,7 +388,7 @@ Save and exit (ESC → :wq → Enter).
 systemctl            		| 	Restarts the SSH service.                      			| 	sudo systemctl restart sshd                                
 
 Restart the SSH service for changes to take effect. Now, you can connect to the Linux VM using a username and password: ssh username@public-ip
-ssh                  		| 	Connects to a Linux VM using username and password.     	| 	ssh john@192.168.1.100                                        	|
+ssh                  		| 	Connects to a Linux VM using username and password.     	| 	ssh john@192.168.1.100                             
 
 FILE PERMISSION IN LINUX
 File permissions control who can read, write, or execute files and directories. This ensures restricted access for security and collaboration.
@@ -419,23 +419,24 @@ chmod g+w   		| 	Give write permission to the group				      	   | 	chmod g+w f1
 chmod g+rwx 		|	Grant all permissions to the group					   |	chmod g+rwx f1.txt
 chmod o-x            	| 	Remove execute permission from others                  			   | 	chmod o-x f1.txt                    
 chmod o-rwx 		|	Remove all permissions from others					   |	chmod o-rwx f1.txt							
-
 CHANGING FILE-DIRECTORY OWNERSHIP
 The chown command is used to change the ownership of files and directories in Linux. It allows modifying both the owner and the group associated with a file or directory.
 sudo chown [user]       | 	Changes the owner of a file/directory.                                     | 	sudo chown john f1.txt                                      
 sudo chown : [group]	| 	Changes the group of a file/directory.                                     | 	sudo chown :developers f1.txt            
-sudo chown [u]:[g] 	| 	Changes both owner and group.                                 		   | 	sudo chown john:developers f1.txt                       	
+sudo chown [u]:[g] 	| 	Changes both owner and group.                                 		   | 	sudo chown john:developers f1.txt                       
+
 WORKING WITH ZIP IN LINUX
 zip                  	| 	Compresses files into a .zip archive.                                      | 	zip my_archive.zip *.txt           
 unzip                	| 	Extracts a .zip file.                                                      | 	unzip my_archive.zip                                        
 unzip -l             	| 	Lists contents of a ZIP file.                                              | 	unzip -l my_archive.zip     
 zip -d               	| 	Deletes files from a ZIP archive.                                          | 	zip -d my_archive.zip file2.txt                             
-zip -e               	| 	Creates a password-protected ZIP file.                                     | 	zip -e secure_data.zip secret_file.txt                      	
+zip -e               	| 	Creates a password-protected ZIP file.                                     | 	zip -e secure_data.zip secret_file.txt                      
+
 NETWORKING COMMANDS
 ping                 	| 	Checks connectivity to a URL or IP address.                                | 	ping google.com             
 wget                 	| 	Downloads files from the internet.                     			   | 	wget http://example.com/file.txt                            
 curl                 	| 	Sends HTTP requests to a server.                                           | 	curl https://zenquotes.io/api/random                     
-ifconfig            	| 	Displays the IP address of the machine.                                    | 	ifconfig                                                                   	
+ifconfig            	| 	Displays the IP address of the machine.                                    | 	ifconfig                                                            
 INSTALLATION COMMANDS
 git --version        	| 	Checks if the Git client is installed.                                     | 	git --version              
 yum                  	| 	Installs software on Amazon Linux/Red Hat/CentOS.                          | 	sudo yum install git                        
