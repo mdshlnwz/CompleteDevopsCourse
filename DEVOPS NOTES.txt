@@ -369,8 +369,8 @@ Warning:	Editing the sudoers file incorrectly can break the system. Always use t
 	Purpose: This is the configuration file for the SSH daemon (sshd).
 	What it does: Controls how the server handles SSH connections, including, Whether password or key authentication is allowed, Which users can connect, Port number for SSH, Whether root 	login is allowed.
 
-sudo cat /etc/sudoers     | 	Displays the sudoers file content.                        		| 	sudo cat /etc/sudoers       
-sudo visudo               | 	Safely edits the sudoers file.                                          | 	sudo visudo                                                            	
+sudo cat /etc/sudoers   | 	Displays the sudoers file content.                        		| 	sudo cat /etc/sudoers       
+sudo visudo             | 	Safely edits the sudoers file.                                          | 	sudo visudo                                                            	
 Add the following line at the end of the file:
 <username> ALL=(ALL:ALL) ALL
 Press CTRL + X, then Y, and hit Enter.
@@ -378,17 +378,17 @@ How to Enable Password-Based Authentication for Users?
 By default, password authentication is disabled in Linux virtual machines (VMs) for security reasons. To enable it:
 
 Open the sshd_config file:
-vi /etc/ssh/sshd_config 	| 	Edits the SSH configuration file.                  		| 	sudo vi /etc/ssh/sshd_config         
+vi /etc/ssh/sshd_config | 	Edits the SSH configuration file.                  			| 	sudo vi /etc/ssh/sshd_config         
 
 Modify the following line, Find this line:
 PasswordAuthentication- no
 Change it to:
 PasswordAuthentication- yes
 Save and exit (ESC → :wq → Enter).
-systemctl            		| 	Restarts the SSH service.                      			| 	sudo systemctl restart sshd                                
+systemctl            	| 	Restarts the SSH service.                      				| 	sudo systemctl restart sshd                                
 
 Restart the SSH service for changes to take effect. Now, you can connect to the Linux VM using a username and password: ssh username@public-ip
-ssh                  		| 	Connects to a Linux VM using username and password.     	| 	ssh john@192.168.1.100                             
+ssh                  	| 	Connects to a Linux VM using username and password.     		| 	ssh john@192.168.1.100                             
 
 FILE PERMISSION IN LINUX
 File permissions control who can read, write, or execute files and directories. This ensures restricted access for security and collaboration.
@@ -442,7 +442,184 @@ git --version        	| 	Checks if the Git client is installed.                 
 yum                  	| 	Installs software on Amazon Linux/Red Hat/CentOS.                          | 	sudo yum install git                        
 apt                  	| 	Installs software on Ubuntu/Debian.                                        | 	sudo apt install git       
 whereis              	| 	Checks the installation path of a command.                                 | 	whereis git                        
-yum remove           	| 	Uninstalls software.                                                       | 	sudo yum remove git -y     					
+yum remove           	| 	Uninstalls software.                                                       | 	sudo yum remove git -y     	
 
 SHELL SCRIPTING
+Scripting is the process of writing a set of commands in a file to be executed sequentially OR Shell scripting is executing a set of commands using a shell (like Bash).
+Shell scripting is a powerful and efficient method to automate system and project tasks.
+Purpose: Automate repetitive tasks and system operations.
+It’s widely used for automating project and system-level tasks.
+
+Why Use Scripting?
+Reduces manual effort.
+Ensures consistent and accurate execution.
+Saves time by running multiple commands together.
+
+Example:
+Instead of typing commands like whoami, pwd, date, cal, ls -l every day, you can create a script file (tasks.sh) and run it using:
+$ bash tasks.sh
+
+Common Use Cases:-
+Backup Automation – Back up files or databases.
+Cleanup Scripts – Delete unnecessary/temp files.
+Log Analysis – Process system logs.
+System Health Checks – Monitor CPU, RAM, disk.
+Scripts usually have a .sh extension.
+
+Running a Shell Script
+$ #! /bin/bash					# Define She-Bang Bash
+$ bash task.sh     				# Using Bash
+$ ./task.sh OR bash task.sh OR sh task.sh       # Direct execution (requires permission)
+$ chmod +x task.sh 				# Make it executable
+
+SHA-BANG
+Sha-Bang (also spelled Shebang) is used to specify the interpreter (shell) that should execute the script.
+#!/bin/bash, where
+#! is the Shebang.
+/bin/bash tells the system to run the script using the Bash shell.
+
+Why Use Sha-Bang?
+Ensures the script runs in the correct shell, regardless of the user's default shell.
+Avoids compatibility issues across different systems or environments.
+
+Is Sha-Bang Mandatory?
+Not mandatory, but it is highly recommended because without it, the system uses the default shell, which may cause errors if your script uses features not supported by that shell.
+
+VARIABLES NAMING CONVENTION IN SHELL
+General Rules
+Use only letters, numbers, and underscores (_).
+Must start with a letter or underscore — not a number.
+No spaces allowed in variable names.
+Avoid special characters like @, #, !, -, etc.
+Case-sensitive: NAME, Name, and name are different.
+VALID										INVALID
+valid_name="John"						123name="Invalid"        # Starts with a number
+_valid_name="Doe"						name-with-dash="Bad"     # Contains a dash
+VALID_AGE=25							name space="Wrong"       # Contains a space
+
+For Best Practices
+Use UPPERCASE for constants				:	MAX_RETRIES=5
+Use lowercase with underscores for regular variables	:	user_name="Alice"
+Use meaningful variable names				:	file_count=10     	#Clear and descriptive
+Use double quotes for strings with spaces		:	full_name="John Doe"
+
+ACCESSING VARIABLES
+Use the $ symbol to retrieve a variable’s value:
+name="Alice"
+echo "Hello, $name!"  	#Output: Hello, Alice!
+
+Declaring Read-Only Variables
+Use readonly to prevent a variable from being modified:
+readonly MY_CONSTANT=100
+MY_CONSTANT=200  	#Error: cannot modify a readonly variable
+
+Unsetting a Variable
+Use unset to delete a variable:
+my_var="Hello"
+unset my_var
+echo $my_var  # Output: (empty)
+
+Following proper naming and usage practices helps maintain readability, debuggability, and script stability.
+
+Example 1: Basic Input and Output
+CODE								COMMENTS					EXPLANATION
+#!/bin/bash												#!/bin/bash — Specifies the Bash shell.
+echo "Enter your name:"					# Prompt the user to enter their name		echo "Enter your name:" — Displays a prompt.	
+read name						# Read user input				read name — Takes user input and stores it in the variable name.
+echo "hello, $name"					# Greet the user				echo "hello, $name" — Outputs a personalized greeting.
+
+Example 2: Prompting with read -p
+#!/bin/bash											#!/bin/bash — Specifies the Bash shell.
+read -p "Enter your first name: " first_name		# Prompt for first name			read -p "..." variable — Prompts and reads input in a single line.	
+read -p "Enter your last name: " last_name		# Prompt for last name 			first_name and last_name — Variables to hold input.
+echo "Hello, $first_name $last_name! Welcome!"		# Display full greeting			echo — Prints a full welcome message using both names.
+
+These examples show how interactive shell scripts can make scripts more user-friendly and dynamic.
+
+TYPES OF VARIABLES IN LINUX
+Linux has two main types of variables:
+
+System Variables (Environment Variables)
+Predefined by the system.
+Available globally to all users and processes.
+Written in UPPERCASE.
+echo $SHELL    			# e.g., /bin/bash
+echo $USER     			# e.g., root or your username
+echo $PATH     			# Shows directories for executable files
+To list all system variables:	env
+
+User-Defined Variables
+Created by the user for custom tasks or scripts.
+Not available globally unless exported.
+By convention, written in lowercase.
+name=Pankaj			$echo $name    # Output: Pankaj
+id=101				$echo $id      # Output: 101
+Important Rule:
+No spaces before or after :	Correct: name=Pankaj		Incorrect: name = Pankaj
+
+EXPORT KEYWORD
+The export command makes a variable available to child processes or other script files.
+Example: Parent to Child Script
+parent.sh:
+	#!/bin/bash
+	export MESSAGE="Hello from Parent"
+	./child.sh
+child.sh:
+	#!/bin/bash
+	echo "Child received: $MESSAGE"
+Output:	Child received: Hello from Parent
+Without export, MESSAGE won't be accessible in child.sh.
+
+Making Variables Permanent (User-Specific)
+To persist variables across sessions for a specific user, store them in ~/.bashrc.
+Steps:
+1. Locate .bashrc:
+	ls -la
+2. View its content:
+	cat ~/.bashrc
+3. Edit the file:
+	nano ~/.bashrc   # or vi ~/.bashrc
+4. Add variables at the bottom:
+	export COURSE=devops
+	export TRAINER=pankaj
+5. Save the changes:
+	ESC → :wq in vi, or CTRL + X → Y → Enter in nano.
+6. Apply the changes:
+	source ~/.bashrc
+7. Verify:
+	echo $COURSE     # Output: devops
+	echo $TRAINER    # Output: pankaj
+Only applies to the current user.
+
+Setting Variables for All Users
+To make variables available system-wide, use /etc/profile or /etc/environment.
+
+📁 /etc/profile (for login shells):
+Edit the file:
+
+bash
+Copy
+Edit
+sudo nano /etc/profile
+Add at the end:
+
+bash
+Copy
+Edit
+export COURSE=devops
+export TRAINER=pankaj
+Apply changes:
+
+bash
+Copy
+Edit
+source /etc/profile
+Verify:
+
+bash
+Copy
+Edit
+echo $COURSE
+echo $TRAINER
+✅ Output visible to all users on the system.
 
